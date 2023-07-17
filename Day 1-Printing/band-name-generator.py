@@ -1,3 +1,4 @@
+#input() will get the user input in console
 #1. Create a greeting for your program.
 print("Hello\n")
 #2. Ask the user for the city that they grew up in.
