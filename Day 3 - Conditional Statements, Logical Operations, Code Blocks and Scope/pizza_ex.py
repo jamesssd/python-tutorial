@@ -6,25 +6,46 @@ extra_cheese = input("Do you want extra cheese? Y or N ")
 # 🚨 Don't change the code above 👆
 
 #Write your code below this line 👇
-total = 0
-if size == "S" :
-    total += 15
-    if add_pepperoni == "Y" :
-        total += 2
-    if extra_cheese == "Y" :
-        total += 1
-    print(f"Your final bill is: ${total}.")
-elif size == "M" :
-    total += 20
-    if add_pepperoni == "Y" :
-        total += 3
-    if extra_cheese == "Y" :
-        total += 1
-    print(f"Your final bill is: ${total}.")
-elif size == "L" :
-    total += 25
-    if add_pepperoni == "Y" :
-        total += 3
-    if extra_cheese == "Y" :
-        total += 1
-    print(f"Your final bill is: ${total}.")
+# total = 0
+# if size == "S" :
+#     total += 15
+#     if add_pepperoni == "Y" :
+#         total += 2
+#     if extra_cheese == "Y" :
+#         total += 1
+#     print(f"Your final bill is: ${total}.")
+# elif size == "M" :
+#     total += 20
+#     if add_pepperoni == "Y" :
+#         total += 3
+#     if extra_cheese == "Y" :
+#         total += 1
+#     print(f"Your final bill is: ${total}.")
+# elif size == "L" :
+#     total += 25
+#     if add_pepperoni == "Y" :
+#         total += 3
+#     if extra_cheese == "Y" :
+#         total += 1
+#     print(f"Your final bill is: ${total}.")
+
+bill = 0
+
+if size == "S":
+  bill += 15
+elif size == "M":
+  bill += 20
+else:
+  bill += 25
+
+if add_pepperoni == "Y":
+  if size == "S":
+    bill += 2
+  else:
+    bill += 3
+    
+if extra_cheese == "Y":
+  bill += 1
+  
+print(f"Your final bill is: ${bill}.")
+    
