@@ -22,12 +22,11 @@ e = lower_case.count("e")
 
 love = l + o + v + e
 
-love_score = str(true) + str(love)
-int_love_score = int(love_score)
+love_score = int(str(true) + str(love))
 
-if (int_love_score < 10) or (int_love_score > 90) :
-    print(f"Your loves score is  {int_love_score}, you go together like code and mentos.")
-elif (int_love_score >= 40) and (int_love_score >= 50) :
-    print(f"Your score is {int_love_score}, you are alright together.")
+if (love_score < 10) or (love_score > 90) :
+    print(f"Your score is  {love_score}, you go together like coke and mentos.")
+elif (love_score >= 40) and (love_score <= 50) :
+    print(f"Your score is {love_score}, you are alright together.")
 else :
-    print(f"Your score is {int_love_score}")
+    print(f"Your score is {love_score}.")
