@@ -13,8 +13,6 @@ vertical = int(position[1])
 
 map[vertical-1][horizontal-1] = "X"
 
-
-print(map)
 #Write your code above this row 👆
 
 # 🚨 Don't change the code below 👇
