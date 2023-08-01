@@ -52,64 +52,14 @@
 #Step 3 & 4
 
 import random
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-word_list = ["aardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
+import hangman_words
+import hangman_art
+
+print(hangman_art.logo)
+
+art = hangman_art.stages
+
+chosen_word = random.choice(hangman_words.word_list)
 word_length = len(chosen_word)
 
 #Testing code
@@ -128,18 +78,21 @@ while not end_of_game:
     #Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
+            print(art[live])
     if guess not in chosen_word:
         live -= 1
-        print(stages[live])
+        print(art[live])
         if live == 0:
             end_of_game=True
             print("You lost!")
-    print(live)
-    print(display)
+    print(f"{' '.join(display)}")
     
     if "_" not in display:
         end_of_game = True
         print("Game is over, you won!")
+    
+    # print(display)
+    
+    
