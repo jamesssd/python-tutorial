@@ -52,14 +52,13 @@
 #Step 3 & 4
 
 import random
-import hangman_words
-import hangman_art
+from hangman_words import word_list
+from hangman_art import logo, stages
+#you can use from 
 
-print(hangman_art.logo)
+print(logo)
 
-art = hangman_art.stages
-
-chosen_word = random.choice(hangman_words.word_list)
+chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
 #Testing code
@@ -75,15 +74,19 @@ end_of_game = False
 live = 6
 while not end_of_game:  
     guess = input("Guess a letter: ").lower()
+    if guess in display:
+        print(f'You have already used the letter {guess}, pick a different letter')
     #Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
-            print(art[live])
+            print(stages[live])
+
     if guess not in chosen_word:
         live -= 1
-        print(art[live])
+        print(stages[live])
+        print(f'The letter you picked "{guess}", is not part of the word, you lose a life')
         if live == 0:
             end_of_game=True
             print("You lost!")
