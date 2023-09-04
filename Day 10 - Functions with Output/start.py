@@ -18,6 +18,7 @@
 
 #return is the end point of the functions, any code after return will not run
 def format_name(f_name, l_name):
+    '''Take a first and last name and format it to reutn the titel case version of the name.'''
     if f_name == "" or l_name == "":
         return "You did not provide a valid inputs"
     first_name = f_name.title()
@@ -27,4 +28,7 @@ def format_name(f_name, l_name):
 
 print(format_name(input("What is your first name? "), input("What is your last name? ")))
    
-    
+# Docstrings
+#     - way to create a documents while coding
+#   -see format_name()
+#   - has to use three quotation marks """INSERT DOCUMENTATION """
