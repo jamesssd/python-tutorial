@@ -32,7 +32,6 @@ What To Do:
 """
 import random
 #from replit import clear
-import os
 from art import logo
 
 def deal_card():
